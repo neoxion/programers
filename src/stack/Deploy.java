@@ -37,9 +37,6 @@ public class Deploy {
         	int cnt = 0;
         	while(!list.isEmpty()) {
         		Func fn = list.peek();
-        		System.out.println(fn.prgs);
-        		System.out.println(fn.spds);
-        		System.out.println(fn.cplt);
         		if(fn.cplt) {
         			list.remove();
         			cnt++;
