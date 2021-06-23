@@ -1,3 +1,5 @@
+package study;
+
 import java.util.*;
 
 class Truck {

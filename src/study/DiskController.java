@@ -1,3 +1,5 @@
+package study;
+
 import java.util.PriorityQueue;
 
 public class DiskController {

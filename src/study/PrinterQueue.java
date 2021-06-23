@@ -1,3 +1,5 @@
+package study;
+
 import java.util.*;
 class PrinterQueue {
     public int solution(int[] priorities, int location) {

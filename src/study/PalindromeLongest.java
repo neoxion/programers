@@ -1,3 +1,5 @@
+package study;
+
 public class PalindromeLongest {
 
 	public static void main(String[] args) {
