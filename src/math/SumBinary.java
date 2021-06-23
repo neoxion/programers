@@ -12,8 +12,13 @@ public class SumBinary {
 //		String a = "1101", b="100";
 		String a = "110100000000111011011100101010101", b="100101010101010010101101110110010100111010111010111001110101010000101100010101110";
 		System.out.println(solution(a, b));
-		System.out.println(solutionByList(a, b));
-		System.out.println(solution(a, b).equals(solutionByList(a, b)));
+		System.out.println(solutionByList(a, b, 2));
+		System.out.println(solution(a, b).equals(solutionByList(a, b, 2)));
+		
+		String x = "222", y = "111";
+		
+		System.out.println(solutionByList(x, y, 3).equals("1110"));
+		System.out.println(solutionByList("333", "101", 4).equals("1100"));
 
 	}
 
@@ -58,7 +63,7 @@ public class SumBinary {
 		return Integer.toBinaryString(sum);
 	}
 	
-	private static String solutionByList(String a, String b) {
+	private static String solutionByList(String a, String b, int K) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		
 		for(int i = 0; i < Math.max(a.length(), b.length()); i++) {
@@ -70,12 +75,12 @@ public class SumBinary {
 		for(int j = 0; j < list.size(); j++) {
 			int bit = list.get(j);
 			
-			if(bit > 1) {
-				list.set(j, bit % 2);
+			if(bit > K - 1) {
+				list.set(j, bit % K);
 				if(j < list.size() - 1) {
-					list.set(j+1, list.get(j+1) + bit/2);
+					list.set(j+1, list.get(j+1) + bit/K);
 				} else {
-					list.add(bit/2);
+					list.add(bit/K);
 				}
 			}
 		};
